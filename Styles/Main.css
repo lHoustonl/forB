@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.tests_panel {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgb(237, 238, 240);
+}
+
+.panel {
+    width: 35%;
+    min-height: 50px;
+    padding: 10px;
+    margin: 10px;
+    background: white;
+    border-radius: 5px;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: "Lucida Console";
+    display: flex;
+    align-items: center;
+    border: none;
+}
+
+.creator_icon {
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+.input_field {
+    background: rgb(237, 238, 240);
+    border: none;
+    font-size: 28px;
+    font-family: "Lucida Console";
+    padding: 5px;
+    color: rgb(77, 77, 77);
+}
+
+.tests_item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tests_item_heading {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.input_field {
+    width: 97.5%;
+}
+
+.change_position {
+    display: flex;
+    flex-direction: column;
+    width: 2.5%;
+}
+
+.arrow {
+    width: 100%;
+    color: rgb(77, 77, 77);
+}
+
+.variants {
+    margin-bottom: 25px;
+    font-size: 24px;
+    display: flex;
+    color: black;
+}
+
+.radio {
+    color: rgb(77, 77, 77);
+}
+
+.radio_button input[type=radio] {
+    display: none;
+}
+.radio_button label {
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Checked */
+.radio_button input[type=radio]:checked + label {
+    color: rgb(109, 109, 109);
+    cursor: auto;
+}
+
+.answers {
+    display: flex;
+}
+
+.add {
+    display: flex;
+    flex-direction: column;
+}
