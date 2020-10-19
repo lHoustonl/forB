@@ -19,6 +19,11 @@ function checkBotAndTop(core_item, arrowBot, arrowTop) {
     }
 }
 
+function switchTrueFalse(tr, fl) {
+    tr.setAttribute('disabled',true);
+    fl.setAttribute('disabled',false);
+}
+
 function AddNewItem() {
 
     let  core_item = document.createElement('div');
@@ -79,16 +84,47 @@ function AddNewItem() {
 
         let  variants = document.createElement('div');
         variants.className = "variants";
-        variants.innerHTML ='[\n' +
-            '            <div class="radio_button">\n' +
-            '                <input id="radio-1" type="radio" name="variant" checked>\n' +
-            '                <label for="radio-1"> Один вариант. </label>\n' +
-            '            </div>\n' +
-            '            <div class="radio_button">\n' +
-            '                <input id="radio-2" type="radio" name="variant">\n' +
-            '                <label for="radio-2"> Несколько вариантов. </label>\n' +
-            '            </div>\n' +
-            '            ]';
+        // variants.innerHTML+='[';
+
+            let oneVariant =  document.createElement('div');
+            oneVariant.className    =   'radio_button oneVariant';
+            oneVariant.innerHTML = 'Один вариант.';
+            variants.append(oneVariant);
+
+
+            let moreVariants =  document.createElement('div');
+            moreVariants.className    =   'radio_button moreVariants';
+            moreVariants.innerHTML = 'Несколько вариантов.';
+            variants.append(moreVariants);
+
+
+            oneVariant.addEventListener("click",function(){
+                switchTrueFalse(oneVariant,moreVariants);
+
+                // oneVariant.setAttribute('disabled',true);
+                // moreVariants.setAttribute('disabled',false);
+             });
+
+            moreVariants.addEventListener("click",function(){
+                switchTrueFalse(moreVariants,oneVariant);
+                // moreVariants.setAttribute('disabled',true);
+                // oneVariant.setAttribute('disabled',false);
+             });
+
+
+            oneVariant.setAttribute('disabled',true);
+        // variants.innerHTML+=']';
+
+        // variants.innerHTML ='[\n' +
+        //     '            <div class="radio_button">\n' +
+        //     '                <input id="radio-1" type="radio" name="variant" checked>\n' +
+        //     '                <label for="radio-1"> Один вариант. </label>\n' +
+        //     '            </div>\n' +
+        //     '            <div class="radio_button">\n' +
+        //     '                <input id="radio-2" type="radio" name="variant">\n' +
+        //     '                <label for="radio-2"> Несколько вариантов. </label>\n' +
+        //     '            </div>\n' +
+        //     '            ]';
         core_item.append(variants);
 
         let  answers = document.createElement('div');

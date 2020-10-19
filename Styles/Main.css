@@ -94,20 +94,20 @@ html, body {
     color: rgb(77, 77, 77);
 }
 
-.radio_button input[type=radio] {
-    display: none;
-}
-.radio_button label {
+.radio_button {
     display: inline-block;
     cursor: pointer;
-    user-select: none;
-}
 
-/* Checked */
-.radio_button input[type=radio]:checked + label {
-    color: black;
-    cursor: auto;
 }
+.radio_button[disabled=true] {
+    color: #000000;
+   cursor: auto;
+}
+/*!* Checked *!*/
+/*.radio_button input[type=radio]:checked + label {*/
+/*    color: #000000;*/
+/*    cursor: auto;*/
+/*}*/
 
 .answers {
 
