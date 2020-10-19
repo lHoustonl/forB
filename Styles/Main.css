@@ -76,7 +76,7 @@ html, body {
     margin-bottom: 25px;
     font-size: 24px;
     display: flex;
-    color: black;
+    color: rgb(109, 109, 109);
 }
 
 .radio {
@@ -94,7 +94,7 @@ html, body {
 
 /* Checked */
 .radio_button input[type=radio]:checked + label {
-    color: rgb(109, 109, 109);
+    color: black;
     cursor: auto;
 }
 
