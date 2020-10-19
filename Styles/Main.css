@@ -18,6 +18,13 @@ html, body {
     flex-direction: column;
     background: rgb(237, 238, 240);
 }
+.panel_for_items {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+}
 
 .panel {
     width: 35%;
@@ -71,6 +78,10 @@ html, body {
     width: 100%;
     color: rgb(77, 77, 77);
 }
+.arrow[disabled=true] {
+
+    opacity: 0.4;
+}
 
 .variants {
     margin-bottom: 25px;
@@ -99,9 +110,14 @@ html, body {
 }
 
 .answers {
+
     display: flex;
-    width: 95%;
     align-items: center;
+    flex-direction: column;
+}
+.answer_item {
+    display: flex;
+    align-items: start;
     margin: 5px;
 }
 

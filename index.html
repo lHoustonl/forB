@@ -4,6 +4,8 @@
     <link rel="stylesheet" href="Styles/Main.css">
     <meta charset="UTF-8">
     <title>For B</title>
+    <script src="js/scripts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 <div class="tests_panel">
@@ -12,7 +14,9 @@
             Создатель
     </div>
     <input class="tests_name panel" autofocus placeholder="Введите название">
-    <div class="tests_item panel">
+    <div class="panel_for_items" id="panel_items">
+
+        <div class="tests_item panel">
         <div class="tests_item_heading">
             <textarea class="input_field"></textarea>
             <div class="change_position">
@@ -33,12 +37,15 @@
             ]
         </div>
         <div class="answers">
-            <button class="delete_answer"></button>
-            <input class="input_field variant">
+            <div class="answer_item">
+                <button class="delete_answer"></button>
+                <input class="input_field variant">
+            </div>
         </div>
         <button class="add_answer"></button>
     </div>
-    <button class="add panel">
+    </div>
+    <button class="add panel" onclick="AddNewItem()">
         +
     </button>
 </div>
