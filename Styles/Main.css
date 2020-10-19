@@ -41,6 +41,7 @@ html, body {
 
 .input_field {
     background: rgb(237, 238, 240);
+    width: 97.5%;
     border: none;
     font-size: 28px;
     font-family: "Lucida Console";
@@ -58,10 +59,6 @@ html, body {
     display: flex;
     width: 100%;
     margin-bottom: 10px;
-}
-
-.input_field {
-    width: 97.5%;
 }
 
 .change_position {
@@ -103,6 +100,34 @@ html, body {
 
 .answers {
     display: flex;
+    width: 95%;
+    align-items: center;
+    margin: 5px;
+}
+
+.delete_answer {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: darkred;
+    border: none;
+    margin-right: 15px;
+}
+
+.variant {
+    width: 50%;
+    height: 50%;
+}
+
+.add_answer {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: darkblue;
+    border: none;
+    margin-right: 15px;
+    align-self: flex-start;
+    margin-left: 2.5%;
 }
 
 .add {
