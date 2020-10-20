@@ -29,10 +29,7 @@ function AddNewItem() {
     let  core_item = document.createElement('div');
     // core_item.innerHTML = 'lololololol' ;
 
-    core_item.className = "tests_item panel";
-
-
-
+    core_item.className = "item panel";
         let tests_item_heading  = document.createElement('div');
         tests_item_heading.className='tests_item_heading'
             let input_field  = document.createElement('textarea');
@@ -52,13 +49,9 @@ function AddNewItem() {
                     let previous = core_item.previousElementSibling;
                     if (previous) {
                         core_item.parentElement.insertBefore( core_item,previous);
-
-
                         checkBotAndTop(core_item,arrowBot,arrowTop)
-
                     }
                 });
-
 
                 let  arrowBot = document.createElement('div');
                 arrowBot.className ='arrow arrowBot';
@@ -68,35 +61,28 @@ function AddNewItem() {
 
                 arrowBot.setAttribute('disabled',true);
                 arrowBot.addEventListener("click",function(){
-        // let previous =  $(this).parent().parent().parent().parent().prev();
+                // let previous =  $(this).parent().parent().parent().parent().prev();
                     let following = core_item.nextElementSibling;
                     if (following) {
                         core_item.parentElement.insertBefore( following,core_item);
-
                         checkBotAndTop(core_item,arrowBot,arrowTop);
-
-
                     }
                  });
-
 
         core_item.append(tests_item_heading);
 
         let  variants = document.createElement('div');
         variants.className = "variants";
         // variants.innerHTML+='[';
-
             let oneVariant =  document.createElement('div');
             oneVariant.className    =   'radio_button oneVariant';
             oneVariant.innerHTML = 'Один вариант.';
             variants.append(oneVariant);
 
-
             let moreVariants =  document.createElement('div');
             moreVariants.className    =   'radio_button moreVariants';
             moreVariants.innerHTML = 'Несколько вариантов.';
             variants.append(moreVariants);
-
 
             oneVariant.addEventListener("click",function(){
                 switchTrueFalse(oneVariant,moreVariants);
