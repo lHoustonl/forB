@@ -115,9 +115,7 @@ html, body {
     margin: 5px;
     flex-direction: column;
 }
-.answer_item{
-    margin-top: 5px;
-}
+
 .delete_answer {
     width: 25px;
     height: 25px;
