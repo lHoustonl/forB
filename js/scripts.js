@@ -149,6 +149,14 @@ function AddNewItem() {
 function SaveData() {
     let panel_items = $('#panel_items');
     alert(panel_items.length);
+    panel_items.forEach(function (item){
+
+        alert(panel_items.length);
+    });
+    panel_items.each(function (item){
+
+        alert(panel_items.length);
+    });
     panel_items.each(function(elem) {
         let answer = elem.querySelector('.input_field');
         let answerValue = answer.value;
