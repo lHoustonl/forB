@@ -113,8 +113,11 @@ html, body {
     width: 95%;
     justify-content: center;
     margin: 5px;
+    flex-direction: column;
 }
-
+.answer_item{
+    margin-top: 5px;
+}
 .delete_answer {
     width: 25px;
     height: 25px;

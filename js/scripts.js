@@ -7,23 +7,30 @@ function checkBotAndTop(core_item, arrowBot, arrowTop) {
     else
     {
         arrowTop.setAttribute('disabled',false);
+        //previous.querySelector('.arrowTop').setAttribute('disabled',false);
     }
     let following = core_item.nextElementSibling;
     if(!following)
     {
         arrowBot.setAttribute('disabled',true);
+
     }
     else
     {
         arrowBot.setAttribute('disabled',false);
+        // following.querySelector('.arrowTop').setAttribute('disabled',false);
+        // let ff = following.querySelector('.arrowTop');
+        // ff.setAttribute('disabled',false);
     }
 }
-
+function checkBotAndTopNeighbors(core_item) {
+    checkBotAndTop(core_item,core_item.querySelector('.arrowBot'),core_item.querySelector('.arrowTop'));
+}
 function switchTrueFalse(tr, fl) {
     tr.setAttribute('disabled',true);
     fl.setAttribute('disabled',false);
 }
-
+AddNewItem();
 function AddNewItem() {
 
     let  core_item = document.createElement('div');
@@ -41,7 +48,7 @@ function AddNewItem() {
             tests_item_heading.append(change_position);
 
                 let  arrowTop = document.createElement('div');
-                arrowTop.className ='arrow';
+                arrowTop.className ='arrow arrowTop';
                 arrowTop.innerHTML='↑';
                 change_position.append(arrowTop);
                 arrowTop.addEventListener("click",function(){
@@ -49,7 +56,9 @@ function AddNewItem() {
                     let previous = core_item.previousElementSibling;
                     if (previous) {
                         core_item.parentElement.insertBefore( core_item,previous);
-                        checkBotAndTop(core_item,arrowBot,arrowTop)
+                        checkBotAndTop(core_item,arrowBot,arrowTop);
+                        checkBotAndTopNeighbors(core_item.nextElementSibling);
+
                     }
                 });
 
@@ -66,6 +75,8 @@ function AddNewItem() {
                     if (following) {
                         core_item.parentElement.insertBefore( following,core_item);
                         checkBotAndTop(core_item,arrowBot,arrowTop);
+                        checkBotAndTopNeighbors(core_item.previousElementSibling);
+                        //checkBotAndTopNeighbors(core_item);
                     }
                  });
 
@@ -117,16 +128,16 @@ function AddNewItem() {
         answers.className = "answers";
         core_item.append(answers);
 
-        let  add_answer = document.createElement('button');
-        add_answer.className = 'add_answer';
-        core_item.append( add_answer);
-        add_answer.addEventListener("click",function(){
-            addAnswer(answers);
-        });
+            let  add_answer = document.createElement('button');
+            add_answer.className = 'add_answer';
+            core_item.append( add_answer);
+            add_answer.addEventListener("click",function(){
+                addAnswer(answers);
+            });
 
 
     $('#panel_items').append(core_item);
-
+    checkBotAndTop(core_item,arrowBot,arrowTop);
 
     let previous = core_item.previousElementSibling;
     if (previous) {
@@ -135,6 +146,34 @@ function AddNewItem() {
     }
 
 }
+function SaveData() {
+    let panel_items = $('#panel_items');
+    alert(panel_items.length);
+    panel_items.each(function(elem) {
+        let answer = elem.querySelector('.input_field');
+        let answerValue = answer.value;
+
+        let oneVariant = elem.querySelector('.oneVariant');
+        let  oneVariantValue = oneVariant.getAttribute('disabled').toString();
+
+
+        let answers = elem.querySelector('.answers');
+
+        // alert(answers.length);
+        for (let ind = 0; ind<answers.length; ind++) {
+            let answerItem = posts[ind];
+            let answerI = answerItem.querySelector('.input_field');
+            alert(answerI.value.toString());
+        }
+
+        //alert(oneVariantValue.toString());
+
+
+
+
+    });
+}
+
 function addAnswer(answers) {
     let  answer_item = document.createElement('div');
     answer_item.className = "answer_item";
