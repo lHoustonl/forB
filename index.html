@@ -9,38 +9,12 @@
 </head>
 <body>
 <div class="tests_panel">
-    <div class="creator panel">
-        <img class="creator_icon" src="https://sun1-89.userapi.com/impf/c847220/v847220584/1e83c4/oAJ04vYSuO0.jpg?size=50x0&quality=88&crop=103,90,666,666&sign=3d68b876810178e16ab274d896b59375&ava=1">
+    <div class="creator panel" >
+        <img class="creator_icon" onclick="SaveData()"  src="https://sun1-89.userapi.com/impf/c847220/v847220584/1e83c4/oAJ04vYSuO0.jpg?size=50x0&quality=88&crop=103,90,666,666&sign=3d68b876810178e16ab274d896b59375&ava=1">
         Создатель
     </div>
     <input class="panel" autofocus placeholder="Введите название">
     <div class="items_list" id="panel_items">
-        <div class="item panel">
-            <div class="tests_item_heading">
-                <textarea class="input_field"></textarea>
-                <div class="change_position">
-                    <div class="arrow">↑</div>
-                    <div class="arrow">↓</div>
-                </div>
-            </div>
-            <div class="variants">
-                [
-                <div class="radio_button" disabled="true">
-                    Один вариант.
-                </div>
-                <div class="radio_button">
-                    Несколько вариантов.
-                </div>
-                ]
-            </div>
-            <div class="answers">
-                <div class="answer_item">
-                    <button class="delete_answer"></button>
-                    <input class="input_field variant">
-                </div>
-            </div>
-            <button class="add_answer"></button>
-        </div>
     </div>
     <button class="add panel" onclick="AddNewItem()">
         +
