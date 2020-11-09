@@ -147,31 +147,28 @@ function AddNewItem() {
 
 }
 function SaveData() {
-    let panel_items = $('#panel_items');
-    alert(panel_items.length);
-    panel_items.each(function(elem) {
-        let answer = elem.querySelector('.input_field');
+    let panel_items = document.getElementById('panel_items');
+ let elems = panel_items.getElementsByClassName('item');
+ for(var i = 0; i<elems.length; i++)
+ {
+    let elem = elems[i];
+
+        let answer = elem.getElementsByClassName('input_field')[0];
         let answerValue = answer.value;
 
-        let oneVariant = elem.querySelector('.oneVariant');
-        let  oneVariantValue = oneVariant.getAttribute('disabled').toString();
+        let oneVariant = elem.getElementsByClassName('oneVariant')[0];
+        let  oneVariantValue = oneVariant.getAttribute('disabled');
 
 
-        let answers = elem.querySelector('.answers');
+        let answers = elem.getElementsByClassName('answers')[0].getElementsByClassName('answer_item');
 
-        // alert(answers.length);
+     // alert(answers.length);
         for (let ind = 0; ind<answers.length; ind++) {
-            let answerItem = posts[ind];
-            let answerI = answerItem.querySelector('.input_field');
+            let answerItem = answers[ind];
+            let answerI = answerItem.getElementsByClassName('variant')[0];
             alert(answerI.value.toString());
-        }
-
-        //alert(oneVariantValue.toString());
-
-
-
-
-    });
+     }
+ }
 }
 
 function addAnswer(answers) {
